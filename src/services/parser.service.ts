@@ -7,6 +7,8 @@ export async function fetchExchangeRates(): Promise<CurrencyRates> {
   try {
     const { data: html } = await axios.get('https://ifin.kz/exchanger/valuta-sk/branch/34104')
 
+    console.log(DateTime.now().plus({ hours: 5 }).toISO(), 'parsed!')
+
     return {
       kztToUsd: ratesExtractor(html, 'Доллар США'),
       kztToRub: ratesExtractor(html, 'Российский рубль')
