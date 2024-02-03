@@ -1,0 +1,17 @@
+{
+  "name": "exchange_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "type": "module",
+  "dependencies": {
+    "@types/luxon": "^3.4.2",
+    "@types/node": "^20.11.16",
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.4.1",
+    "envalid": "^8.0.0",
+    "luxon": "^3.4.4",
+    "telegraf": "^4.15.3"
+  }
+}

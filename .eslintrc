@@ -1,0 +1,19 @@
+{
+  "env": {
+    "commonjs": false,
+    "es2021": true,
+    "node": true
+  },
+  "extends": "standard",
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "camelcase": "off",
+    "space-before-function-paren": ["error", "never"],
+    "curly": ["error", "all"],
+    "quote-props": ["error", "consistent"],
+    "dot-notation": "off"
+  }
+}
