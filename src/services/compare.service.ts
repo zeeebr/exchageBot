@@ -8,7 +8,7 @@ export function compareRates(currentData: CurrencyRates, previousData?: Currency
     const resultMessages: string[] = currencies.map(currency => {
       const currentRates: CurrencyRateDetails = currentData[currency]
 
-      const icon = (currency === 'kztToUsd') ? '\ud83c\uddfa\ud83c\uddf8' : (currency === 'kztToRub') ? '\ud83c\uddf7\ud83c\uddfa' : '???'
+      const icon = (currency === 'kztToUsd') ? '$' : (currency === 'kztToRub') ? '₽' : '???'
       const updatedAt: string = DateTime.fromMillis(currentRates.updatedAt).toFormat('dd.MM.yyyy HH:mm')
 
       return `${icon} Buy: ${currentRates.buy}, Sell: ${currentRates.sell} (updatedAt: ${updatedAt})`

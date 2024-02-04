@@ -12,5 +12,5 @@ async function app(previousRates?: CurrencyRates): Promise<void> {
 
   setTimeout((): void => {
     app(exchangeRates)
-  }, 0.2 * 60 * 1000)
+  }, 10 * 60 * 1000)
 }
