@@ -25,7 +25,7 @@ export function compareRates(currentData: CurrencyRates, previousData?: Currency
     const sellChanged: boolean = currentRates.sell !== previousRates.sell
 
     if (buyChanged || sellChanged) {
-      const icon = (currency === 'kztToUsd') ? '\ud83c\uddfa\ud83c\uddf8' : (currency === 'kztToRub') ? '\ud83c\uddf7\ud83c\uddfa' : '???'
+      const icon = (currency === 'kztToUsd') ? '$' : (currency === 'kztToRub') ? '₽' : '???'
       const updatedAt: string = DateTime.fromMillis(currentRates.updatedAt).toFormat('dd.MM.yyyy HH:mm')
 
       const changes: string[] = [
