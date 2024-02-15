@@ -6,11 +6,15 @@ import { compareRates } from './services/compare.service'
 app()
 
 async function app(previousRates?: CurrencyRates): Promise<void> {
-  const exchangeRates: CurrencyRates = await fetchExchangeRates()
-  const message: string = compareRates(exchangeRates, previousRates)
-  if (message !== '') { await sendMessage(message) }
+  let exchangeRates: CurrencyRates
 
-  setTimeout((): void => {
-    app(exchangeRates)
-  }, 10 * 60 * 1000)
+  try {
+    exchangeRates = await fetchExchangeRates()
+    const message: string = compareRates(exchangeRates, previousRates)
+    if (message !== '') { await sendMessage(message) }
+  } finally {
+    setTimeout((): void => {
+      app(exchangeRates)
+    }, 10 * 60 * 1000)
+  }
 }

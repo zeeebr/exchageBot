@@ -10,8 +10,8 @@ export async function fetchExchangeRates(): Promise<CurrencyRates> {
     console.log(DateTime.now().plus({ hours: 5 }).toISO(), 'parsed!')
 
     return {
-      kztToUsd: ratesExtractor(html, 'Доллар США'),
-      kztToRub: ratesExtractor(html, 'Российский рубль')
+      kztToRub: ratesExtractor(html, 'Российский рубль'),
+      kztToUsd: ratesExtractor(html, 'Доллар США')
     }
   } catch (err) {
     console.error(err)
